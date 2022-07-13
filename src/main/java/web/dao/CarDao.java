@@ -1,14 +1,16 @@
 package web.dao;
 
+import org.springframework.stereotype.Component;
 import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class CarDao {
     private static int CARS_COUNT;
 
-    private List<Car> cars;
+    private List<Car> cars = new ArrayList<>();
 
     {
         cars = new ArrayList<>();
@@ -20,9 +22,6 @@ public class CarDao {
     }
 
     public List<Car> getCars(int a) {
-        if (a >= 5) {
-            return cars.toArray();
-        } else
-            return cars.subList(0, a);
+        return a < 5 ? cars.stream().limit(a).toList(): cars;
         }
     }
