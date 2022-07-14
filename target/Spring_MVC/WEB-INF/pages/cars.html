@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+
+<table>
+    <caption style="color: darkslateblue">Choose Count</caption>
+
+    <tr>
+        <th>a</th>
+    </tr>
+
+    <tr>
+        <td><a href="/cars?count=1">a 1<br></a></td>
+    </tr>
+
+    <tr>
+        <td><a href="/cars?count=2">a 2<br></a></td>
+    </tr>
+
+    <tr>
+        <td><a href="/cars?a=3">a 3<br></a></td>
+    </tr>
+
+    <tr>
+        <td><a href="/cars?count=4">a 4<br></a></td>
+    </tr>
+
+    <tr>
+        <td><a href="/cars">all<br></a></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>model</th>
+        <th>series</th>
+        <th>doors</th>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td th:utext="${car.id}">Id</td>
+        <td th:utext="${car.model}">model</td>
+        <td th:utext="${car.series}">series</td>
+        <td th:utext="${car.doors}">doors</td>
+    </tr>
+</table>
+
+</body>
+</html>
