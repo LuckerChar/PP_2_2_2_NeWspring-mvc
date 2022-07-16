@@ -1,5 +1,5 @@
 //package web.dao;
-//
+// не обращаемся к базам данных, не нужен слой ДАО, он отвечают за работу с таблицами!
 //import org.springframework.stereotype.Component;
 //import web.model.Car;
 //import web.service.CarService;
